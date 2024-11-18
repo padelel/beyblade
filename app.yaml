@@ -1,9 +1,10 @@
 runtime: python39
 entrypoint: serve -s .
+
 handlers:
   - url: /Assets/styles.css
-    static_files: /Assets/styles.css
-    upload: /Assets/styles.css
+    static_files: Assets/styles.css
+    upload: Assets/styles.css
   - url: /.*
     static_files: index.html
     upload: index.html
