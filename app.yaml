@@ -6,4 +6,4 @@ handlers:
     upload: Assets/styles.css
   - url: /.*
     static_files: index.html
-    upload: index.html
+    upload: index.html
