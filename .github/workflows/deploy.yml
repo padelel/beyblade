@@ -1,0 +1,25 @@
+name: Deploy to Google App Engine
+
+on:
+  push:
+    branches:
+      - main # Ganti dengan branch utama Anda, jika berbeda
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup gcloud CLI
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        version: 'latest'
+        project_id: dicoding-assignment-441609
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+
+    - name: Deploy to App Engine
+      run: |
+        gcloud app deploy --quiet
